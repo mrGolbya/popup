@@ -35,13 +35,17 @@ class ItcModal {
       return;
     }
     this.#elem.classList.add('itc-modal-show');
-    const scrollbarWidth = Math.abs(window.innerWidth - document.documentElement.clientWidth);
+    // const scrollbarWidth = Math.abs(window.innerWidth - document.documentElement.clientWidth);
+    const scrollbarWidth = window.innerWidth - document.body.clientWidth;
     if (window.innerWidth > document.body.clientWidth + scrollbarWidth) {
       return;
     }
+ 
     document.body.style.paddingRight = `${scrollbarWidth}px`;
+    document.querySelector('.itc-modal-backdrop').style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
     this.#elem.dispatchEvent(this.#eventShowModal);
+    
   }
 
   hide() {

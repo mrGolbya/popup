@@ -2,11 +2,7 @@
   --itc-modal-margin: 0.5rem;
 }
 
-@media (min-width: 576px) {
-  .itc-modal {
-    --itc-modal-margin: 1.75rem;
-  }
-}
+
 
 .itc-modal-backdrop {
   position: fixed;
@@ -40,6 +36,13 @@
     max-width: 500px;
     margin: var(--itc-modal-margin) auto;
   }
+  .itc-modal {
+    --itc-modal-margin: 1.75rem;
+  }
+}
+
+@media (min-width: 576px) {
+
 }
 
 .itc-modal-show .itc-modal-backdrop,
